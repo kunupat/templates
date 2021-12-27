@@ -49,8 +49,8 @@ phases:
         scriptString: |
           html_content='${context.httpoutput.html_content}'
           echo $html_content
-          #encoded_html_content='$html_content' | base64
-          #echo '$encoded_html_content'
+          encoded_html_content=$html_content | base64
+          echo $encoded_html_content
 
           #JSON_STRING='{"content" : $encoded_html_content}'
           #echo '$JSON_STRING'
