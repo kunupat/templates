@@ -24,7 +24,10 @@ phases:
         executeWithPreviousSteps: false
         method: GET
         publishAsVar: true
-        responseProcessingExpressions: null
+        responseProcessingExpressions:
+        - name: html_content
+          valueType: TEXT
+          value: ${json.select()}
         sweepingOutputName: response_body
         sweepingOutputScope: PIPELINE
         tags: null
