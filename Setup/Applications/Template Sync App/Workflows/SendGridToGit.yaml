@@ -79,7 +79,7 @@ phases:
       name: Save in Git
       properties:
         assertion: ''
-        body: ${json.format(RESP.RESP.JSON_STRING)}
+        body: ${json.format(RESP.JSON_STRING)}
         executeWithPreviousSteps: false
         headers:
         - key: Authorization
