@@ -96,7 +96,7 @@ phases:
         timeoutMillis: 10000
         url: https://api.github.com/repos/kunupat/templates/contents/template3.txt
         useProxy: false
-    stepsInParallel: true
+    stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
     stepsInParallel: false
