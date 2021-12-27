@@ -77,7 +77,7 @@ phases:
         assertion: ${context.res.JSON_STRING} == "PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
         body: |-
           {
-          "content": "${context.res.JSON_STRING}",
+          "content": "${context.get(${instance.name}).JSON_STRING}",
           "message" : "Committed via Harness"
           }
         executeWithPreviousSteps: false
