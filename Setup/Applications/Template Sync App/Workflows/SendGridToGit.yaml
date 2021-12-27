@@ -73,7 +73,9 @@ phases:
       name: Save in Git
       properties:
         assertion: ''
-        body: ${context.RESP.JSON_STRING}
+        body: |-
+          {"content" : "PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+", "message" : "Commit message...."
+          }
         executeWithPreviousSteps: false
         headers:
         - key: Authorization
