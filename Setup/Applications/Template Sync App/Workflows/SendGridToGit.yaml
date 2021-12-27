@@ -42,7 +42,9 @@ phases:
           "message" : "Committed via Harness"
           }
         executeWithPreviousSteps: false
-        headers: null
+        headers:
+        - key: Authorization
+          value: Basic a3VudXBhdDpnaHBfWVozeUdWRzJDWmFpT2dkOHlzRURCWmFTY1I2ckExM3FPWnJN
         method: PUT
         publishAsVar: false
         responseProcessingExpressions: ''
