@@ -27,8 +27,8 @@ phases:
         responseProcessingExpressions:
         - name: html_content
           valueType: TEXT
-          value: ${json.select()}
-        sweepingOutputName: response_body
+          value: ${json.select(html_content)}
+        sweepingOutputName: httpoutput
         sweepingOutputScope: PIPELINE
         tags: null
         templateUuid: null
