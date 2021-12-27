@@ -24,7 +24,7 @@ phases:
         executeWithPreviousSteps: false
         method: GET
         publishAsVar: true
-        responseProcessingExpressions: ''
+        responseProcessingExpressions: null
         sweepingOutputName: response
         sweepingOutputScope: WORKFLOW
         tags: null
