@@ -48,12 +48,13 @@ phases:
         publishAsVar: false
         scriptString: |
           html_content='${context.httpoutput.html_content}'
-          encoded_html_content=$html_content | base64
-          echo $encoded_html_content
+          echo '$html_content'
+          encoded_html_content='$html_content' | base64
+          echo '$encoded_html_content'
 
           JSON_STRING='{"content" : $encoded_html_content}'
-          echo $JSON_STRING
-          export $JSON_STRING
+          echo '$JSON_STRING'
+          export '$JSON_STRING'
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
