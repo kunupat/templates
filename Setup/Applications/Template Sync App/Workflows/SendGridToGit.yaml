@@ -19,7 +19,7 @@ phases:
     - type: HTTP
       name: Get SendGrid Template
       properties:
-        assertion: ''
+        assertion: ${json.select(template_id)}==101
         body: ''
         executeWithPreviousSteps: false
         method: GET
