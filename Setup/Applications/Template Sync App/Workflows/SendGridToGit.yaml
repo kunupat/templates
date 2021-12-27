@@ -48,10 +48,13 @@ phases:
         publishAsVar: false
         scriptString: |
           html_content='${context.httpoutput.html_content}'
+          echo "HTML Content: "
           echo $html_content
+          echo "------"
           encoded_html_content=$html_content | base64
+          echo "HTML Encoded Content: "
           echo $encoded_html_content
-
+          echo "------"
           #JSON_STRING='{"content" : $encoded_html_content}'
           #echo '$JSON_STRING'
           #export '$JSON_STRING'
