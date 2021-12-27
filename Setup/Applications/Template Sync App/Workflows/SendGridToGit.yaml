@@ -43,7 +43,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: echo ${context.get(response)}
+        scriptString: echo hi
         scriptType: BASH
         sshKeyRefName: null
         sweepingOutputName: null
