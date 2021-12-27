@@ -25,8 +25,8 @@ phases:
         method: GET
         publishAsVar: true
         responseProcessingExpressions: null
-        sweepingOutputName: response
-        sweepingOutputScope: WORKFLOW
+        sweepingOutputName: response_body
+        sweepingOutputScope: PIPELINE
         tags: null
         templateUuid: null
         templateVariables: null
