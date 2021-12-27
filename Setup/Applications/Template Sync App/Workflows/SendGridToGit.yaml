@@ -50,7 +50,8 @@ phases:
           echo $html_content
           echo "------"
 
-          encoded_html_content=$(printf '%s' "$html_content" | base64)
+          #encoded_html_content=$(printf '%s' "$html_content" | base64)
+          encoded_html_content=$(printf '%s' "$html_content" | base64 | sed 's/+/-/g; s,/,_,g')
 
           echo "HTML Encoded Content: "
           echo $encoded_html_content
