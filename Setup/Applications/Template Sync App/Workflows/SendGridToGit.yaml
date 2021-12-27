@@ -48,6 +48,7 @@ phases:
         publishAsVar: false
         scriptString: |
           #!/bin/sh
+
           html_content = '${context.httpoutput.html_content}'
           encoded_html_content = $html_content  | base64
           echo $encoded_html_content
