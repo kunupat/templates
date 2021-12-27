@@ -16,27 +16,6 @@ phases:
   - type: PREPARE_STEPS
     name: Prepare Steps
     steps:
-    - type: HTTP
-      name: Get SendGrid Template
-      properties:
-        assertion: json.select("template_id", ${httpResponseBody}) == 101
-        body: ''
-        executeWithPreviousSteps: false
-        method: GET
-        publishAsVar: true
-        responseProcessingExpressions:
-        - name: html_content
-          valueType: TEXT
-          value: ${json.select("html_content", httpResponseBody)}
-        sweepingOutputName: httpoutput
-        sweepingOutputScope: PIPELINE
-        tags: null
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 10000
-        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
-        useProxy: false
     - type: SHELL_SCRIPT
       name: Formatting
       properties:
@@ -71,6 +50,27 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 60000
+    - type: HTTP
+      name: Get SendGrid Template
+      properties:
+        assertion: json.select("template_id", ${httpResponseBody}) == 101
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: true
+        responseProcessingExpressions:
+        - name: html_content
+          valueType: TEXT
+          value: ${json.select("html_content", httpResponseBody)}
+        sweepingOutputName: httpoutput
+        sweepingOutputScope: PIPELINE
+        tags: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
+        useProxy: false
     - type: HTTP
       name: Save in Git
       properties:
