@@ -57,7 +57,8 @@ phases:
           echo "HTML Encoded Content: "
           echo $encoded_html_content
           echo "------"
-          JSON_STRING=$(printf '{"content" : "%s"}' "$encoded_html_content")
+          #JSON_STRING=$(printf '{"content" : "%s"}' "$encoded_html_content")
+          JSON_STRING=$encoded_html_content
           echo $JSON_STRING
           export $JSON_STRING
         scriptType: BASH
