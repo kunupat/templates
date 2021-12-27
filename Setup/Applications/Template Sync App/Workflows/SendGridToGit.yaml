@@ -77,7 +77,7 @@ phases:
         assertion: ''
         body: |-
           {
-          "content": '${context.res.JSON_STRING}',
+          "content": "${context.res.JSON_STRING}",
           "message" : "Committed via Harness"
           }
         executeWithPreviousSteps: false
