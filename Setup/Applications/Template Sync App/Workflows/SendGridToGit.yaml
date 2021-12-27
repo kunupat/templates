@@ -73,11 +73,7 @@ phases:
       name: Save in Git
       properties:
         assertion: ''
-        body: |-
-          {
-          "content": ${context.RESP.JSON_STRING},
-          "message" : "Committed via Harness"
-          }
+        body: ' ${context.RESP.JSON_STRING}'
         executeWithPreviousSteps: false
         headers:
         - key: Authorization
