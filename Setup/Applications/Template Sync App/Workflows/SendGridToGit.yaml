@@ -42,12 +42,13 @@ phases:
       properties:
         commandPath: null
         connectionAttributeName: null
+        connectionType: WINRM
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: false
         scriptString: echo ${context.httpoutput.html_content}
-        scriptType: BASH
+        scriptType: POWERSHELL
         sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
