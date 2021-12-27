@@ -62,10 +62,12 @@ phases:
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
-        sweepingOutputName: ${instance.name}
+        sweepingOutputName: res
         sweepingOutputScope: WORKFLOW
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
