@@ -49,8 +49,8 @@ phases:
         scriptString: |
           #!/bin/bash
 
-          html_content = '${context.httpoutput.html_content}'
-          encoded_html_content = $html_content  | base64
+          html_content='${context.httpoutput.html_content}'
+          encoded_html_content=$html_content  | base64
           echo $encoded_html_content
 
           JSON_STRING=$( jq -n \
