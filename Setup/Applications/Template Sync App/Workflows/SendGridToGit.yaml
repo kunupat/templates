@@ -45,19 +45,24 @@ phases:
         outputVars: JSON_STRING
         publishAsVar: true
         scriptString: |-
+          #!/bin/bash
+
           html_content='${context.httpoutput.html_content}'
           echo "HTML Content: "
           echo $html_content
           echo "------"
 
           #encoded_html_content=$(printf '%s' "$html_content" | base64)
-          encoded_html_content=$(printf '%s' "$html_content" | base64 | sed 's/+/-/g; s,/,_,g')
+          #encoded_html_content=$(printf '%s' "$html_content" | base64 | sed 's/+/-/g; s,/,_,g')
+          encoded_html_content=$(echo -n $html_content | base64 | sed 's/+/-/g; s,/,_,g')
 
           echo "HTML Encoded Content: "
           echo $encoded_html_content
           echo "------"
+
           JSON_STRING=$(printf '{"content" : "%s", "message" : "Committed via Harness."}' "$encoded_html_content")
           #JSON_STRING=$(printf "%s" "$encoded_html_content")
+
           echo $JSON_STRING
           export JSON_STRING=$JSON_STRING
         scriptType: BASH
