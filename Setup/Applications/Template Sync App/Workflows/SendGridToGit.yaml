@@ -17,22 +17,6 @@ phases:
     name: Prepare Steps
     steps:
     - type: HTTP
-      name: Get SendGrid Template
-      properties:
-        assertion: ''
-        body: ''
-        executeWithPreviousSteps: false
-        method: GET
-        publishAsVar: true
-        responseProcessingExpressions: ''
-        sweepingOutputName: response
-        sweepingOutputScope: WORKFLOW
-        tags: null
-        templateVariables: ''
-        timeoutMillis: 10000
-        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
-        useProxy: false
-    - type: HTTP
       name: Save in Git
       properties:
         assertion: ''
@@ -56,6 +40,22 @@ phases:
         templateVersion: null
         timeoutMillis: 10000
         url: https://api.github.com/repos/kunupat/templates/contents/template2.txt
+        useProxy: false
+    - type: HTTP
+      name: Get SendGrid Template
+      properties:
+        assertion: ''
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: true
+        responseProcessingExpressions: ''
+        sweepingOutputName: response
+        sweepingOutputScope: WORKFLOW
+        tags: null
+        templateVariables: ''
+        timeoutMillis: 10000
+        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
         useProxy: false
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
