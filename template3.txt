@@ -1,1 +1,1 @@
-Hi there.
+<!DOCTYPE html><html><body><h1>Booking Confirmed!</h1><p>Booking Number:12345</p></body></html>
