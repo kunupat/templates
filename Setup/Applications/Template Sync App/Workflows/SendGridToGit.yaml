@@ -53,7 +53,7 @@ phases:
           echo "------"
           encoded_html_content=$html_content | 'base64'
           echo "HTML Encoded Content: "
-          echo $encoded_html_content
+          echo $html_content | base64
           echo "------"
           #JSON_STRING='{"content" : $encoded_html_content}'
           #echo '$JSON_STRING'
