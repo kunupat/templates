@@ -63,7 +63,7 @@ phases:
         secretOutputVars: ''
         sshKeyRefName: null
         sweepingOutputName: res
-        sweepingOutputScope: WORKFLOW
+        sweepingOutputScope: PIPELINE
         templateExpressions: null
         templateUuid: null
         templateVariables: null
