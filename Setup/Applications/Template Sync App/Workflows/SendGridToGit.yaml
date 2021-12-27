@@ -75,7 +75,7 @@ phases:
         assertion: ${JSON_STRING}=="PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
         body: |-
           {
-          "content": "${JSON_STRING}",
+          "content": "${jsonpath('JSON_STRING')}",
           "message" : "Committed via Harness"
           }
         executeWithPreviousSteps: false
