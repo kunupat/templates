@@ -48,13 +48,13 @@ phases:
         publishAsVar: false
         scriptString: |
           html_content = '${context.httpoutput.html_content}'
-          encoded_html_content = html_content  | base64
-          echo encoded_html_content
+          encoded_html_content = $html_content  | base64
+          echo $encoded_html_content
 
           JSON_STRING=$( jq -n \
                             --arg c '$encoded_html_content ' \
                             --arg m 'Committed by Harness'\
-                            '{content: $content, message: $message}' )
+                            '{content: $c, message: $m}' )
 
           echo JSON_STRING
           export JSON_STRING
