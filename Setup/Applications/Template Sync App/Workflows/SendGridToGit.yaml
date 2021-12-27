@@ -64,7 +64,7 @@ phases:
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
-        sweepingOutputName: res
+        sweepingOutputName: ${instance.name}
         sweepingOutputScope: PIPELINE
         templateExpressions: null
         templateUuid: null
