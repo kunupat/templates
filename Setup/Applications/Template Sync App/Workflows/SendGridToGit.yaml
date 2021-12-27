@@ -51,7 +51,7 @@ phases:
           encoded_html_content=$html_content | base64
           echo $encoded_html_content
 
-          JSON_STRING='{"content" : ${deploymentUrl}, "message":"Committed by Harness"}'
+          JSON_STRING='{"content" : ${deploymentUrl}}'
           echo $JSON_STRING
           export $JSON_STRING
         scriptType: BASH
