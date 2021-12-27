@@ -43,7 +43,7 @@ phases:
         executeOnDelegate: true
         host: null
         outputVars: JSON_STRING
-        publishAsVar: true
+        publishAsVar: false
         scriptString: |-
           html_content='${context.httpoutput.html_content}'
           echo "HTML Content: "
@@ -62,8 +62,8 @@ phases:
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
-        sweepingOutputName: res
-        sweepingOutputScope: PIPELINE
+        sweepingOutputName: null
+        sweepingOutputScope: null
         templateExpressions: null
         templateUuid: null
         templateVariables: null
