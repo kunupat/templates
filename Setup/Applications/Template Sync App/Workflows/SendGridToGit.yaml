@@ -44,10 +44,22 @@ phases:
         connectionAttributeName: null
         executeOnDelegate: true
         host: null
-        outputVars: ''
+        outputVars: JSON_STRING
         publishAsVar: false
-        scriptString: echo '${context.httpoutput.html_content}'
+        scriptString: |
+          html_content = '${context.httpoutput.html_content}'
+          encoded_html_content = html_content  | base64
+          echo encoded_html_content
+
+          JSON_STRING=$( jq -n \
+                            --arg c '$encoded_html_content ' \
+                            --arg m 'Committed by Harness'\
+                            '{content: $content, message: $message}' )
+
+          echo JSON_STRING
+          export JSON_STRING
         scriptType: BASH
+        secretOutputVars: ''
         sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
