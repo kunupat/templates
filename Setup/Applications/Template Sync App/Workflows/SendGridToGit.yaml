@@ -69,6 +69,26 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 60000
+    - type: HTTP
+      name: Save in Git
+      properties:
+        assertion: ${context.res.JSON_STRING}=="PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
+        body: "\n\t{\n\"content\": \"${context.get(${res}).JSON_STRING}\",\n\"message\"\
+          \ : \"Committed via Harness\"\n}"
+        executeWithPreviousSteps: false
+        headers:
+        - key: Authorization
+          value: Basic a3VudXBhdDpnaHBfWVozeUdWRzJDWmFpT2dkOHlzRURCWmFTY1I2ckExM3FPWnJN
+        method: PUT
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        templateVariables: ''
+        timeoutMillis: 10000
+        url: https://api.github.com/repos/kunupat/templates/contents/template3.txt
+        useProxy: false
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
