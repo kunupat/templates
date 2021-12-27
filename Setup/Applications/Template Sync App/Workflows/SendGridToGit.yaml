@@ -72,10 +72,10 @@ phases:
     - type: HTTP
       name: Save in Git
       properties:
-        assertion: ${jsonpath('JSON_STRING')}=="PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
+        assertion: ${jsonpath('context.RESP.JSON_STRING')}=="PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
         body: |-
           {
-          "content": "${jsonpath('JSON_STRING')}",
+          "content": "${jsonpath('context.RESP.JSON_STRING')}",
           "message" : "Committed via Harness"
           }
         executeWithPreviousSteps: false
