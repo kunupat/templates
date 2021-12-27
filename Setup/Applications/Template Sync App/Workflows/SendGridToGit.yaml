@@ -60,7 +60,7 @@ phases:
           #JSON_STRING=$(printf '{"content" : "%s"}' "$encoded_html_content")
           JSON_STRING=$(printf "%s" "$encoded_html_content")
           echo $JSON_STRING
-          export $JSON_STRING
+          export JSON_STRING=$JSON_STRING
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
