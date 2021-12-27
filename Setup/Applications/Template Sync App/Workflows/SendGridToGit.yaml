@@ -37,6 +37,38 @@ phases:
         timeoutMillis: 10000
         url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
         useProxy: false
+    - type: SHELL_SCRIPT
+      name: Formatting
+      properties:
+        commandPath: null
+        connectionAttributeName: null
+        executeOnDelegate: true
+        host: null
+        outputVars: JSON_STRING
+        publishAsVar: true
+        scriptString: |-
+          html_content='${context.httpoutput.html_content}'
+          echo "HTML Content: "
+          echo $html_content
+          echo "------"
+
+          encoded_html_content=$(printf '%s' "$html_content" | base64)
+
+          echo "HTML Encoded Content: "
+          echo $encoded_html_content
+          echo "------"
+          #JSON_STRING=$(printf '{"content" : "%s"}' "$encoded_html_content")
+          JSON_STRING=$(printf "%s" "$encoded_html_content")
+          echo $JSON_STRING
+          export JSON_STRING=$JSON_STRING
+        scriptType: BASH
+        secretOutputVars: ''
+        sshKeyRefName: null
+        sweepingOutputName: ${instance.name}
+        sweepingOutputScope: WORKFLOW
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
