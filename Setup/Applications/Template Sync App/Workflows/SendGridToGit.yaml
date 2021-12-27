@@ -47,6 +47,7 @@ phases:
         outputVars: JSON_STRING
         publishAsVar: false
         scriptString: |
+          #!/bin/sh
           html_content = '${context.httpoutput.html_content}'
           encoded_html_content = $html_content  | base64
           echo $encoded_html_content
@@ -56,8 +57,8 @@ phases:
                             --arg m 'Committed by Harness'\
                             '{content: $c, message: $m}' )
 
-          echo JSON_STRING
-          export JSON_STRING
+          echo $JSON_STRING
+          export $JSON_STRING
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
