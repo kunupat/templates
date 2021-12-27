@@ -42,13 +42,16 @@ phases:
           "message" : "Committed via Harness"
           }
         executeWithPreviousSteps: false
+        headers: null
         method: PUT
         publishAsVar: false
         responseProcessingExpressions: ''
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: https://api.github.com/repos/kunupat/templates/contents/template2.txt
         useProxy: false
