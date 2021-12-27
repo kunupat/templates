@@ -17,6 +17,27 @@ phases:
     name: Prepare Steps
     steps:
     - type: HTTP
+      name: Get SendGrid Template
+      properties:
+        assertion: json.select("template_id", ${httpResponseBody}) == 101
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: true
+        responseProcessingExpressions:
+        - name: html_content
+          valueType: TEXT
+          value: ${json.select("html_content", httpResponseBody)}
+        sweepingOutputName: httpoutput
+        sweepingOutputScope: PIPELINE
+        tags: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
+        useProxy: false
+    - type: HTTP
       name: Save in Git
       properties:
         assertion: ${context.res.JSON_STRING} == "PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
@@ -40,27 +61,6 @@ phases:
         templateVersion: null
         timeoutMillis: 10000
         url: https://api.github.com/repos/kunupat/templates/contents/template3.txt
-        useProxy: false
-    - type: HTTP
-      name: Get SendGrid Template
-      properties:
-        assertion: json.select("template_id", ${httpResponseBody}) == 101
-        body: ''
-        executeWithPreviousSteps: false
-        method: GET
-        publishAsVar: true
-        responseProcessingExpressions:
-        - name: html_content
-          valueType: TEXT
-          value: ${json.select("html_content", httpResponseBody)}
-        sweepingOutputName: httpoutput
-        sweepingOutputScope: PIPELINE
-        tags: null
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 10000
-        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
         useProxy: false
     - type: SHELL_SCRIPT
       name: Formatting
