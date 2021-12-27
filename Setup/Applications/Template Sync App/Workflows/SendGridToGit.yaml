@@ -57,9 +57,9 @@ phases:
           echo "HTML Encoded Content: "
           echo $encoded_html_content
           echo "------"
-          JSON_STRING='{"content" : $encoded_html_content}'
-          echo '$JSON_STRING'
-          export '$JSON_STRING'
+          JSON_STRING=$(printf '{"content" : "%s"}' "$encoded_html_content")
+          echo $JSON_STRING
+          export $JSON_STRING
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRefName: null
