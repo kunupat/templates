@@ -73,8 +73,11 @@ phases:
       name: Save in Git
       properties:
         assertion: ${context.res.JSON_STRING}=="PCFET0NUWVBFIGh0bWw+PGh0bWw+PGJvZHk+PGgxPkJvb2tpbmcgQ29uZmlybWVkITwvaDE+PHA+ Qm9va2luZyBOdW1iZXI6IDEyMzQ1PC9wPjwvYm9keT48L2h0bWw+"
-        body: "\n\t{\n\"content\": \"${context.get(${res}).JSON_STRING}\",\n\"message\"\
-          \ : \"Committed via Harness\"\n}"
+        body: |-
+          {
+          "content": "${context.get(res).JSON_STRING}",
+          "message" : "Committed via Harness"
+          }
         executeWithPreviousSteps: false
         headers:
         - key: Authorization
@@ -85,7 +88,9 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: https://api.github.com/repos/kunupat/templates/contents/template3.txt
         useProxy: false
