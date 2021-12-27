@@ -48,7 +48,7 @@ phases:
         publishAsVar: false
         scriptString: |
           html_content='${context.httpoutput.html_content}'
-          encoded_html_content=$html_content  | base64
+          encoded_html_content=$html_content | base64
           echo $encoded_html_content
 
           JSON_STRING='{"content" : ${deploymentUrl}, "message":"Committed by Harness"}'
