@@ -27,7 +27,7 @@ phases:
         responseProcessingExpressions:
         - name: html_content
           valueType: TEXT
-          value: ${json.select("html_content", httpResponseBody)}
+          value: ${json.select("html_content", ${httpResponseBody})}
         sweepingOutputName: httpoutput
         sweepingOutputScope: WORKFLOW
         tags: null
