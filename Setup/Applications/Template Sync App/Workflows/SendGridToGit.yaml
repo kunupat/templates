@@ -54,7 +54,9 @@ phases:
 
           #encoded_html_content=$(printf '%s' "$html_content" | base64)
           #encoded_html_content=$(printf '%s' "$html_content" | base64 | sed 's/+/-/g; s,/,_,g')
-          encoded_html_content=$(echo -n $html_content | base64 | sed 's/+/-/g; s,/,_,g')
+          #encoded_html_content=$(echo -n $html_content | base64 | sed 's/+/-/g; s,/,_,g')
+          encoded_html_content=$(echo -ne $html_content | base64)
+          encoded_html_content=$(echo $encoded_html_content |  sed 's/ //g')
 
           echo "HTML Encoded Content: "
           echo $encoded_html_content
@@ -94,7 +96,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: https://api.github.com/repos/kunupat/templates/contents/template3.txt
+        url: https://api.github.com/repos/kunupat/templates/contents/template9.txt
         useProxy: false
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
