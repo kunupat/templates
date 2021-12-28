@@ -79,6 +79,25 @@ phases:
         timeoutMillis: 10000
         url: https://api.github.com/repos/kunupat/templates/contents/template9.txt
         useProxy: false
+    - type: HTTP
+      name: Get Template from SendGrid
+      properties:
+        assertion: ''
+        body: ''
+        executeWithPreviousSteps: false
+        method: GET
+        publishAsVar: true
+        responseProcessingExpressions:
+        - name: html_content
+          valueType: TEXT
+          value: ${json.select("html_content", httpResponseBody)}
+        sweepingOutputName: httpoutput
+        sweepingOutputScope: WORKFLOW
+        tags: null
+        templateVariables: ''
+        timeoutMillis: 10000
+        url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
+        useProxy: false
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
