@@ -19,7 +19,7 @@ phases:
     - type: HTTP
       name: Get SendGrid Template
       properties:
-        assertion: ''
+        assertion: json.select("template_id", ${httpResponseBody})==101
         body: ''
         executeWithPreviousSteps: false
         method: GET
@@ -27,7 +27,7 @@ phases:
         responseProcessingExpressions:
         - name: html_content
           valueType: TEXT
-          value: ${json.select("html_content", httpResponseBody)}
+          value: json.select("html_content", ${httpResponseBody})
         sweepingOutputName: httpoutput
         sweepingOutputScope: WORKFLOW
         tags: null
