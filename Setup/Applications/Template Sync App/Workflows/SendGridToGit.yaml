@@ -27,11 +27,13 @@ phases:
         responseProcessingExpressions:
         - name: html_content
           valueType: TEXT
-          value: ${json.select("html_content", httpResponseBody)}
+          value: ${json.select("template_id", httpResponseBody)}
         sweepingOutputName: httpoutput
         sweepingOutputScope: WORKFLOW
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
         useProxy: false
