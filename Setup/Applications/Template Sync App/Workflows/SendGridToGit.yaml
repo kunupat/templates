@@ -22,12 +22,15 @@ phases:
         assertion: ''
         body: ''
         executeWithPreviousSteps: false
+        headers:
+        - key: accept
+          value: Application/json
         method: GET
         publishAsVar: true
         responseProcessingExpressions:
         - name: html_content
           valueType: TEXT
-          value: ${json.object(httpResponseBody).html_content}
+          value: ${json.select("html_content", httpResponseBody)}
         sweepingOutputName: httpoutput
         sweepingOutputScope: WORKFLOW
         tags: null
