@@ -59,27 +59,6 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: HTTP
-      name: Save in Git
-      properties:
-        assertion: ''
-        body: ${context.RESP.JSON_STRING}
-        executeWithPreviousSteps: false
-        headers:
-        - key: Authorization
-          value: Basic a3VudXBhdDpnaHBfWVozeUdWRzJDWmFpT2dkOHlzRURCWmFTY1I2ckExM3FPWnJN
-        method: PUT
-        publishAsVar: false
-        responseProcessingExpressions: ''
-        sweepingOutputName: null
-        sweepingOutputScope: null
-        tags: null
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 10000
-        url: https://api.github.com/repos/kunupat/templates/contents/template9.txt
-        useProxy: false
-    - type: HTTP
       name: Get SendGrid Template
       properties:
         assertion: ''
@@ -102,6 +81,27 @@ phases:
         templateVersion: null
         timeoutMillis: 10000
         url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
+        useProxy: false
+    - type: HTTP
+      name: Save in Git
+      properties:
+        assertion: ''
+        body: ${context.RESP.JSON_STRING}
+        executeWithPreviousSteps: false
+        headers:
+        - key: Authorization
+          value: Basic a3VudXBhdDpnaHBfWVozeUdWRzJDWmFpT2dkOHlzRURCWmFTY1I2ckExM3FPWnJN
+        method: PUT
+        publishAsVar: false
+        responseProcessingExpressions: ''
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        tags: null
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
+        timeoutMillis: 10000
+        url: https://api.github.com/repos/kunupat/templates/contents/template9.txt
         useProxy: false
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
