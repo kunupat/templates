@@ -19,7 +19,7 @@ phases:
     - type: HTTP
       name: Get SendGrid Template
       properties:
-        assertion: json.select("template_id", ${httpResponseBody}) == 101
+        assertion: ''
         body: ''
         executeWithPreviousSteps: false
         method: GET
@@ -31,7 +31,9 @@ phases:
         sweepingOutputName: httpoutput
         sweepingOutputScope: WORKFLOW
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: https://05564a40-ab49-4b6e-be44-92bc2779ede8.mock.pstmn.io/v3/templates/101/versions/1.0
         useProxy: false
