@@ -98,7 +98,7 @@ phases:
         templateVariables: null
         templateVersion: null
         timeoutMillis: 10000
-        url: https://api.github.com/repos/kunupat/templates/contents/template9.txt
+        url: https://api.github.com/repos/kunupat/templates/contents/template10.txt
         useProxy: false
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
