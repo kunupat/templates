@@ -27,7 +27,7 @@ phases:
         responseProcessingExpressions:
         - name: html_content
           valueType: TEXT
-          value: ${httpResponseBody}
+          value: ${httpResponseBody.html_content}
         sweepingOutputName: httpoutput
         sweepingOutputScope: WORKFLOW
         tags: null
